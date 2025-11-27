@@ -1,66 +1,41 @@
-// src/App.tsx
+import React from "react";
 
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import cloudflareLogo from "./assets/Cloudflare_Logo.svg";
-import honoLogo from "./assets/hono.svg";
-import "./App.css";
-
-function App() {
-  const [count, setCount] = useState(0);
-  const [name, setName] = useState("unknown");
-
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-        <a href="https://hono.dev/" target="_blank">
-          <img src={honoLogo} className="logo cloudflare" alt="Hono logo" />
-        </a>
-        <a href="https://workers.cloudflare.com/" target="_blank">
-          <img
-            src={cloudflareLogo}
-            className="logo cloudflare"
-            alt="Cloudflare logo"
-          />
-        </a>
+    <div
+      style={{
+        fontFamily: "Arial, sans-serif",
+        padding: "40px",
+        textAlign: "center",
+      }}
+    >
+      <h1 style={{ fontSize: "40px", marginBottom: "20px" }}>
+        🚀 Vite + React — Cloudflare Pages Static
+      </h1>
+
+      <p style={{ fontSize: "18px", opacity: 0.8 }}>
+        โครงสร้างใหม่ทั้งหมด — พร้อมใช้งานบน Cloudflare Pages 100%
+      </p>
+
+      <div
+        style={{
+          marginTop: "40px",
+          padding: "20px",
+          borderRadius: "10px",
+          background: "#f1f1f1",
+          display: "inline-block",
+        }}
+      >
+        <p>สร้างใหม่ทั้งหมด 6 ไฟล์:</p>
+        <ul style={{ textAlign: "left" }}>
+          <li>index.html</li>
+          <li>main.tsx</li>
+          <li>App.tsx</li>
+          <li>vite.config.ts</li>
+          <li>tsconfig.json</li>
+          <li>package.json</li>
+        </ul>
       </div>
-      <h1>Test Test Test Edit This Page</h1>
-      <div className="card">
-        <button
-          onClick={() => setCount((count) => count + 1)}
-          aria-label="increment"
-        >
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <div className="card">
-        <button
-          onClick={() => {
-            fetch("/api/")
-              .then((res) => res.json() as Promise<{ name: string }>)
-              .then((data) => setName(data.name));
-          }}
-          aria-label="get name"
-        >
-          Name from API is: {name}
-        </button>
-        <p>
-          Edit <code>worker/index.ts</code> to change the name
-        </p>
-      </div>
-      <p className="read-the-docs">Click on the logos to learn more</p>
-    </>
+    </div>
   );
 }
-
-export default App;
